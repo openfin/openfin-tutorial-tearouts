@@ -14,8 +14,9 @@ function init(){
 };
 
 function initWithOpenFin(){
-    alert("OpenFin is available");
+    console.log("OpenFin is available");
     // Your OpenFin specific code to go here...
+    initTearoutListeners()
 }
 
 function initNoOpenFin(){

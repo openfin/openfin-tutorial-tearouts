@@ -3,7 +3,7 @@
   "startup_app": {
     "name": "OpenFin appseed",
     "description": "A vanilla appseed for OpenFin applications",
-    "url": "http://localhost:9070",
+    "url": "http://localhost:9066",
     "uuid": "openfin-closing-events-demo",
     "autoShow": true
   },

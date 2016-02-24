@@ -1,4 +1,6 @@
-# OpenFin app seed
+# OpenFin tutorial: tratout windows
+
+
 This is a vanilla JavaScript app seed for developing OpenFin apps. It is free from frameworks and build systems, though you may add them as you see fit.
 
 It has a simple Node/Express server for local development.
@@ -16,8 +18,8 @@ Navigate to the root folder where 'server.js' resides with your command line too
 $ node server
 ```
 
-This should start a simple Node server at [http://localhost:9070](http://localhost:9070), then, click the link below to install as an openFin app.
+This should start a simple Node server at [http://localhost:9070](http://localhost:9066), then, click the link below to install as an openFin app.
 
 If you wish to change to localhost port you will need to change the references in "server.js", "app.json" and in the installer link below.
 
-[installer](https://dl.openfin.co/services/download?fileName=openfin_appseed&config=http://localhost:9070/app.json)
+[installer](https://dl.openfin.co/services/download?fileName=openfin_tearout_windows&config=http://localhost:9066/app.json)
