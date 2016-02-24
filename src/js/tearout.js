@@ -178,25 +178,14 @@ just to help demonstrate how the window tear-out effect is simulated.
  */
 
 function showHiddenWindows(bool){
-    // We are only interested in the windows with no content
-
-
-
+    // We are only interested in the windows with no DIV content
     _dragAndDropArray.map(function(d,i){
-
         var hasDiv = [].slice.call(d.target.contentWindow.document.body.children).filter(function(el){
-            //console.log("ELEMENT ", el)
             return el.tagName == 'DIV'
         }).length > 0;
 
-        if( !hasDiv ){
+        if(!hasDiv){
             bool ? d.target.show() : d.target.hide()
         }
-
     });
-
-    console.log(_dragAndDropArray );
-
-    // bool ? d.target.show() : d.target.hide();
-
 }
