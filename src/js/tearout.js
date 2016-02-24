@@ -20,9 +20,7 @@ var _currentDragger,
 
 function createBlankTearout(name, yPosition) {
     var onSuccess =  function(e){
-        var _tearoutElement = document.createElement('div');
-        _tearoutElement.innerHTML = "<div class='callout panel '></div>";
-        this.contentWindow.document.body.appendChild(_tearoutElement);
+
 
         var _fontAwesomeCSS = document.createElement("link");
         _fontAwesomeCSS.rel = "stylesheet";
@@ -45,10 +43,10 @@ function createBlankTearout(name, yPosition) {
     return new fin.desktop.Window({
         "name": "tearout"+name,
         'defaultWidth': 300,
-        'defaultHeight': 100,
+        'defaultHeight': 15,
         defaultTop: yPosition * 110,
         'autoShow': false,
-        'opacity': 0.5,
+        'opacity': 1,
         'url': 'about:blank', //note this must be a valid url, or 'about:blank'
         'frame': false,
         'resizable': true,
@@ -101,7 +99,7 @@ function onDragEnter(e){
 function onDragOver(e) {
     e.preventDefault();
     if ( e.target.className == "dropzone" ) {
-        e.target.style.background = "purple";
+        e.target.style.background = "#454545";
         _currentDropTarget = e.target;
     }
 }
@@ -109,7 +107,7 @@ function onDragLeave(e){
     e.preventDefault();
     var classes = e.target.className.match(/dropzone/g);
     if (classes && classes.length > 0) {
-        e.target.style.background = "";
+        e.target.style.background = "#cccccc";
     }
 }
 function onDragEnd(e) {
@@ -180,10 +178,25 @@ just to help demonstrate how the window tear-out effect is simulated.
  */
 
 function showHiddenWindows(bool){
-    // We are only interested in the
+    // We are only interested in the windows with no content
+
 
 
     _dragAndDropArray.map(function(d,i){
-        bool ? d.target.show() : d.target.hide();
+
+        var hasDiv = [].slice.call(d.target.contentWindow.document.body.children).filter(function(el){
+            //console.log("ELEMENT ", el)
+            return el.tagName == 'DIV'
+        }).length > 0;
+
+        if( !hasDiv ){
+            bool ? d.target.show() : d.target.hide()
+        }
+
     });
+
+    console.log(_dragAndDropArray );
+
+    // bool ? d.target.show() : d.target.hide();
+
 }
