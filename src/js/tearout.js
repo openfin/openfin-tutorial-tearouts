@@ -12,16 +12,13 @@
  */
 var _currentDragger,
     _currentDropTarget,
-    _dragAndDropArray,
-    _hiddenWindowsShowing = false;
+    _dragAndDropArray;
 /*
  'createTearout' creates an new window to receive a dragged snippet of HTML.
  */
 
 function createBlankTearout(name, yPosition) {
     var onSuccess =  function(e){
-
-
         var _fontAwesomeCSS = document.createElement("link");
         _fontAwesomeCSS.rel = "stylesheet";
         _fontAwesomeCSS.type = "text/css";
@@ -44,7 +41,7 @@ function createBlankTearout(name, yPosition) {
         "name": "tearout"+name,
         'defaultWidth': 300,
         'defaultHeight': 15,
-        defaultTop: yPosition * 110,
+        defaultTop: 10 + (yPosition * 80),
         'autoShow': false,
         'opacity': 1,
         'url': 'about:blank', //note this must be a valid url, or 'about:blank'
@@ -73,6 +70,9 @@ function initTearoutListeners(){
     document.addEventListener("dragenter", onDragEnter, false);
     document.addEventListener("drop", onDrop, false);
 
+    /* The functions called on the buttons below are purely to show and hide the hidden windows
+       to demonstrate how the drag and drop technique works.
+     */
     document.querySelector("#show-external").addEventListener('click', function(e){
         showHiddenWindows(true);
     });
@@ -82,8 +82,8 @@ function initTearoutListeners(){
     });
 }
 /*
-These are the functions called by the draggable windows.
-In this example we are assuming you only want to drop our Dom Element into another DOM Element with the class 'dropzone'
+    These are the functions called by the draggable windows.
+    In this example we are assuming you only want to drop our Dom Element into another DOM Element with the class 'dropzone'
  */
 function onDragStart(e){
     _currentDragger = e.target;
@@ -92,7 +92,7 @@ function onDragEnter(e){
     e.preventDefault();
     var classes = e.target.className.match(/dropzone/g);
     if (classes && classes.length > 0) {
-        e.target.style.background = "green";
+        e.target.style.background = "#00ff00";
         _currentDropTarget = e.target;
     }
 }
@@ -110,6 +110,10 @@ function onDragLeave(e){
         e.target.style.background = "#cccccc";
     }
 }
+/*
+    When the drag has finished, work out from the mouse position if it is outside
+    of the main window and should, therefore, reparent the DOM Element, or not.
+*/
 function onDragEnd(e) {
     _currentDragger = e.target;
     isMouseOutOfWindow(e, onMouseOutsideOfWindow, onMouseInsideOfWindow);
@@ -128,8 +132,9 @@ function onDrop(e) {
 }
 //What to do if the mouse is dragged outside of the main window...
 function onMouseOutsideOfWindow(e){
+    // filter the _dragAndDropArray to return just the Object which contents the event target
     var elements = _dragAndDropArray.filter(function(d){
-        return d.element === e.target
+        return d.element === e.target;
     });
     elements[0].target
         .contentWindow

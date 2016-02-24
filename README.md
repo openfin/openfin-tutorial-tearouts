@@ -1,7 +1,17 @@
-# OpenFin tutorial: tratout windows
+# OpenFin tutorial: Tear-out windows
+
+The illusion of being able to tear an element out of a window onto the desktop is acheived by reparenting the DOM elements to an external app window. In this demo the external windows are pre created and each draggable element has a hidden window awaiting it being dragged from the main window. 
+
+As we are able to track the System mouse position, when the element is re-parented we can then move the external window to the mouse position so the element appears to have been dropped on the desktop.
+
+Other techniques are available, for example spawning new windows on-the-fly to accomodate torn out elements. 
+
+The code has been annotated 
 
 
-This is a vanilla JavaScript app seed for developing OpenFin apps. It is free from frameworks and build systems, though you may add them as you see fit.
+--
+
+This is a vanilla JavaScript app, free from frameworks and build systems.
 
 It has a simple Node/Express server for local development.
 
@@ -18,7 +28,7 @@ Navigate to the root folder where 'server.js' resides with your command line too
 $ node server
 ```
 
-This should start a simple Node server at [http://localhost:9070](http://localhost:9066), then, click the link below to install as an openFin app.
+This should start a simple Node server at [http://localhost:9066](http://localhost:9066), then, click the link below to install as an openFin app.
 
 If you wish to change to localhost port you will need to change the references in "server.js", "app.json" and in the installer link below.
 
