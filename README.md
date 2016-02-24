@@ -6,7 +6,7 @@ As we are able to track the System mouse position, when the element is re-parent
 
 Other techniques are available, for example spawning new windows on-the-fly to accomodate torn out elements. 
 
-The code has been annotated 
+The code has been copiously annotated to help you understand the process.
 
 
 --
