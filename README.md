@@ -1,20 +1,19 @@
-# OpenFin tutorial: Tear-out windows
+# Tear-out Windows Example
 
+## Overview
 The illusion of being able to tear an element out of a window onto the desktop is acheived by reparenting the DOM elements to an external app window. In this demo the external windows are pre created and each draggable element has a hidden window awaiting it being dragged from the main window. 
 
 As we are able to track the System mouse position, when the element is re-parented we can then move the external window to the mouse position so the element appears to have been dropped on the desktop.
 
-Other techniques are available, for example spawning new windows on-the-fly to accomodate torn out elements. 
+### Assumptions
+* Other techniques are available, for example spawning new windows on-the-fly to accomodate torn out elements. 
+* The code has been copiously annotated to help you understand the process.
+* This is a vanilla JavaScript app, free from frameworks and build systems.
+* It has a simple Node/Express server for local development.
 
-The code has been copiously annotated to help you understand the process.
+## Launch
 
-
---
-
-This is a vanilla JavaScript app, free from frameworks and build systems.
-
-It has a simple Node/Express server for local development.
-
+### Run Locally
 Clone the repo and run
 
 ```
@@ -32,4 +31,11 @@ This should start a simple Node server at [http://localhost:9066](http://localho
 
 If you wish to change to localhost port you will need to change the references in "server.js", "app.json" and in the installer link below.
 
-[installer](https://dl.openfin.co/services/download?fileName=openfin_tearout_windows&config=http://localhost:9066/app.json)
+## Disclaimers
+* This is a starter example and intended to demonstrate to app providers a sample of how to approach an implementation. There are potentially other ways to approach it and alternatives could be considered. 
+* This is an open source project and all are encouraged to contribute.
+* Its possible that the repo is not actively maintained.
+
+## Support
+Please enter an issue in the repo for any questions or problems. 
+<br> Alternatively, please contact us at support@openfin.co
