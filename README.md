@@ -27,9 +27,11 @@ Navigate to the root folder where 'server.js' resides with your command line too
 $ node server
 ```
 
-This should start a simple Node server at [http://localhost:9066](http://localhost:9066), then, click the link below to install as an openFin app.
+This should start a simple Node server at [http://localhost:9066](http://localhost:9066), then, click the link below to install as an openFin app. 
 
-If you wish to change to localhost port you will need to change the references in "server.js", "app.json" and in the installer link below.
+If you wish to change to localhost port you will need to change the references in "server.js", "app.json" and in the installer link below (chnage %3A9066% to %3A<new port number>% ).
+
+https://install.openfin.co/download/?config=http%3A%2F%2Flocalhost%3A9066%2Fapp.json
 
 ## Disclaimers
 * This is a starter example and intended to demonstrate to app providers a sample of how to approach an implementation. There are potentially other ways to approach it and alternatives could be considered. 
