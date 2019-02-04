@@ -39,8 +39,14 @@ https://install.openfin.co/download/?config=http%3A%2F%2Flocalhost%3A9066%2Fapp.
 * Its possible that the repo is not actively maintained.
 
 ## License
-The code in this repository is covered by the included license.  If you run this code, it may call on the OpenFin RVM or OpenFin Runtime, which are subject to OpenFin’s [Developer License](https://openfin.co/developer-agreement/). If you have questions, please contact support@openfin.co
+MIT
 
+The code in this repository is covered by the included license.
+
+However, if you run this code, it may call on the OpenFin RVM or OpenFin Runtime, which are covered by OpenFin’s Developer, Community, and Enterprise licenses. You can learn more about OpenFin licensing at the links listed below or just email us at support@openfin.co with questions.
+
+https://openfin.co/developer-agreement/ <br/>
+https://openfin.co/licensing/
 ## Support
 Please enter an issue in the repo for any questions or problems. 
 <br> Alternatively, please contact us at support@openfin.co
